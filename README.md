@@ -1,7 +1,6 @@
-# acache: async cache for python
+# acache: async cache
 
-Those are two implementations of async caches for python.
-A implementation of `lru_cache` and an implementation of a cache based on time.
+A implementation of `lru_cache` and `ttl_cache` for `asyncio`.
 
 ## Install
 
