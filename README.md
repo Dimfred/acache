@@ -15,7 +15,7 @@ pip3 install git+https://github.com/Dimfred/acache.git
 
 ## Alternatives
 
-`https://pypi.org/project/async-cache/`
+[async-cache](https://pypi.org/project/async-cache/)
 
 The difference in my package is that if you call a function with the same args, from different threads the second one will not return a value until the first one is completed, s.t. the value gets definitely cached.
 Additionally, I allow overwriting the key generation function, so you can pick your own.
