@@ -54,7 +54,8 @@ assert res1 != res3
 
 
 ```python
-def alru_cache(maxsize=32, make_key=None)
+def alru_cache(maxsize=32, make_key=None):
+    ...
 
 def atime_cache(
     weeks=0,
@@ -66,5 +67,6 @@ def atime_cache(
     microseconds=0,
     timedelta=None,
     make_key=None,
-)
+):
+    ...
 ```
