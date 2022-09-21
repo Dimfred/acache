@@ -1,8 +1,16 @@
 [tool.poetry]
-name = "acache"
+name = "python-acache"
+packages = [
+    { include="acache", from="." }
+]
 version = "0.1.0"
-description = ""
+description = "Async cache"
 authors = ["Dmitrij Vinokour <dimfred.1337@web.de>"]
+homepage = "https://github.com/Dimfred/acache"
+repository = "https://github.com/Dimfred/acache.git"
+license = "MIT"
+
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
