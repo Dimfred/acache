@@ -2,7 +2,7 @@ import asyncio
 
 import pytest
 
-from acache import alru_cache, atime_cache
+from acache import alru_cache, attl_cache
 
 counter = 0
 
@@ -37,9 +37,9 @@ async def test_okay_alru_cache_base(reset_counter):
     # should kick out 1
     assert 3 == (await cached(2))
     # jupp kicked out
-    assert 4 == (await cached(0))
+    assert 4 == (await cached(1))
     # jupp kicked out
-    assert 5 == (await cached(1))
+    assert 5 == (await cached(0))
 
 
 @pytest.mark.asyncio
@@ -58,7 +58,7 @@ async def test_okay_alru_cache_with_class(reset_counter):
     a = A()
     assert 1 == (await cached(a))
     assert 1 == (await cached(a))
-    assert 2 == (await cached(A()))
+    assert 1 == (await cached(A()))
 
 
 @pytest.mark.asyncio
@@ -100,8 +100,8 @@ async def test_okay_alru_cache_locks(reset_counter):
 
 
 @pytest.mark.asyncio
-async def test_okay_atime_cache_base(reset_counter):
-    @atime_cache(seconds=0.1)
+async def test_okay_attl_cache_base(reset_counter):
+    @attl_cache(seconds=0.1)
     async def cache(a):
         global counter
 
@@ -119,8 +119,8 @@ async def test_okay_atime_cache_base(reset_counter):
 
 
 @pytest.mark.asyncio
-async def test_okay_atime_cache_locks(reset_counter):
-    @atime_cache(seconds=0.1)
+async def test_okay_attl_cache_locks(reset_counter):
+    @attl_cache(seconds=0.1)
     async def cache(a):
         global counter
 
