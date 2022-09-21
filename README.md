@@ -66,11 +66,10 @@ assert res1 != res3
 
 
 ```python
-def alru_cache(self, maxsize: int = 128, make_key=None):
+def alru_cache(maxsize: int = 128, make_key=None):
     ...
 
 def attl_cache(
-    self,
     weeks=0,
     days=0,
     hours=0,
